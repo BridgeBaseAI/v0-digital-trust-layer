@@ -21,7 +21,6 @@ import {
   Network,
   FileCheck,
   AlertTriangle,
-  Star,
 } from 'lucide-react'
 
 const AnimatedBackground = () => {
@@ -340,28 +339,7 @@ export default function Home() {
         </motion.div>
       </motion.section>
 
-      {/* Trusted By */}
-      <motion.section
-        className="relative z-10 py-16 px-6 border-y border-cyan-400/10 bg-black/50 backdrop-blur"
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
-      >
-        <div className="max-w-6xl mx-auto">
-          <p className="text-xs text-slate-500 text-center mb-8 tracking-widest">TRUSTED BY LEADING ENTERPRISES</p>
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-6">
-            {['OpenAI', 'Stripe', 'Vercel', 'Linear', 'Figma'].map((company) => (
-              <motion.div
-                key={company}
-                className="flex items-center justify-center px-4 py-3 rounded-lg border border-cyan-400/10 bg-cyan-400/5 text-sm font-medium text-slate-300 hover:border-cyan-400/30 transition-all"
-                whileHover={{ scale: 1.05, borderColor: 'rgba(0, 191, 255, 0.3)' }}
-              >
-                {company}
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </motion.section>
+
 
       {/* Problem Section */}
       <motion.section
@@ -748,67 +726,7 @@ export default function Home() {
         </motion.div>
       </motion.section>
 
-      {/* Testimonials */}
-      <motion.section
-        className="relative z-10 max-w-6xl mx-auto py-20 px-6"
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true, margin: '-100px' }}
-      >
-        <motion.div
-          className="text-center mb-16"
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-        >
-          <span className="text-xs font-semibold text-cyan-400 tracking-widest">TESTIMONIALS</span>
-          <h2 className="text-4xl md:text-5xl font-serif mt-4">
-            Trusted by security <span className="text-cyan-400">leaders</span>
-          </h2>
-        </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-6">
-          {[
-            {
-              name: 'Sarah Chen',
-              role: 'Chief Security Officer, FinTech Corp',
-              quote: 'Decentralized Forensics has transformed how we verify document authenticity. Invaluable.',
-            },
-            {
-              name: 'Marcus Johnson',
-              role: 'Head of Investigations, Major Bank',
-              quote: 'The deepfake detection is industry-leading. We\'ve caught fraud attempts instantly.',
-            },
-            {
-              name: 'Elena Rodriguez',
-              role: 'Compliance Director, Legal Firm',
-              quote: 'Court-admissible verification with blockchain audit trails. Perfect for litigation.',
-            },
-          ].map((testi, i) => (
-            <motion.div
-              key={i}
-              className="bg-cyan-400/5 border border-cyan-400/10 rounded-xl p-8 hover:border-cyan-400/30 transition-all"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
-              whileHover={{ y: -5 }}
-            >
-              <div className="flex gap-1 mb-4">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} size={16} className="fill-amber-400 text-amber-400" />
-                ))}
-              </div>
-              <p className="text-slate-300 mb-6 italic">"{testi.quote}"</p>
-              <div>
-                <p className="font-semibold text-sm">{testi.name}</p>
-                <p className="text-xs text-slate-500">{testi.role}</p>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-      </motion.section>
 
       {/* FAQ Section */}
       <motion.section
@@ -847,7 +765,7 @@ export default function Home() {
             },
             {
               q: 'What file types are supported?',
-              a: 'We support images (JPG, PNG, TIFF), videos (MP4, MOV), documents (PDF, DOCX), and contracts. File size limits vary by plan.',
+              a: 'Currently we support PDF, DOCX, and Excel files. Additional file formats will be added in future updates.',
             },
           ].map((item, i) => (
             <motion.div
