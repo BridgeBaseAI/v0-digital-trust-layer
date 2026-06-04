@@ -461,6 +461,221 @@ export default function Home() {
         </div>
       </motion.section>
 
+      {/* Demo File Upload Section */}
+      <motion.section
+        id="demo"
+        className="relative z-10 max-w-6xl mx-auto py-20 px-6"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true, margin: '-100px' }}
+      >
+        <motion.div
+          className="text-center mb-16"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+        >
+          <span className="text-xs font-semibold text-cyan-400 tracking-widest">HOW IT WORKS</span>
+          <h2 className="text-4xl md:text-5xl font-serif mt-4">
+            Demo: File <span className="text-cyan-400">Analysis in Action</span>
+          </h2>
+          <p className="text-slate-400 mt-4 max-w-2xl mx-auto">
+            Upload your PDF, DOCX, or Excel file to see real-time forensic analysis with blockchain verification
+          </p>
+        </motion.div>
+
+        <div className="grid md:grid-cols-2 gap-12 items-center">
+          {/* Upload Demo */}
+          <motion.div
+            className="glass rounded-2xl p-8 border border-cyan-400/20"
+            initial={{ opacity: 0, x: -40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+          >
+            <h3 className="text-xl font-semibold mb-6">Upload Your File</h3>
+            
+            <div className="border-2 border-dashed border-cyan-400/30 rounded-xl p-8 text-center hover:border-cyan-400/60 transition-all cursor-pointer group">
+              <motion.div
+                className="inline-block"
+                whileHover={{ scale: 1.1 }}
+              >
+                <Upload size={40} className="text-cyan-400 mb-4 group-hover:text-blue-400 transition-colors" />
+              </motion.div>
+              <p className="font-semibold mb-2">Drag and drop your file</p>
+              <p className="text-sm text-slate-500">PDF, DOCX, or Excel files (Max 50MB)</p>
+            </div>
+
+            <div className="mt-6 space-y-2">
+              <p className="text-sm font-semibold text-slate-300">Supported Formats:</p>
+              <div className="flex gap-2 flex-wrap">
+                {['PDF', 'DOCX', 'Excel'].map((format) => (
+                  <span key={format} className="px-3 py-1 bg-cyan-400/10 border border-cyan-400/20 rounded-full text-xs text-cyan-400">
+                    {format}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Analysis Results */}
+          <motion.div
+            className="space-y-4"
+            initial={{ opacity: 0, x: 40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+          >
+            <h3 className="text-xl font-semibold mb-6">Analysis Results</h3>
+            
+            {[
+              { label: 'Authenticity Score', value: '99.2%', icon: ShieldCheck },
+              { label: 'Tamper Detection', value: 'None Found', icon: CheckCircle },
+              { label: 'Blockchain Hash', value: '0x7a3f...', icon: Lock },
+              { label: 'Timestamp', value: 'Just now', icon: Zap },
+            ].map((item, i) => (
+              <motion.div
+                key={i}
+                className="glass rounded-xl p-4 border border-cyan-400/20 flex items-center justify-between"
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                whileHover={{ scale: 1.02, borderColor: 'rgba(0, 255, 255, 0.4)' }}
+              >
+                <div className="flex items-center gap-3">
+                  <div className="w-8 h-8 rounded-lg bg-cyan-400/10 flex items-center justify-center">
+                    <item.icon size={16} className="text-cyan-400" />
+                  </div>
+                  <span className="text-sm text-slate-300">{item.label}</span>
+                </div>
+                <span className="font-semibold text-cyan-400">{item.value}</span>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      </motion.section>
+
+      {/* AI Chatbot Demo Section */}
+      <motion.section
+        id="chatbot"
+        className="relative z-10 max-w-6xl mx-auto py-20 px-6"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true, margin: '-100px' }}
+      >
+        <motion.div
+          className="text-center mb-16"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+        >
+          <span className="text-xs font-semibold text-cyan-400 tracking-widest">AI ASSISTANT</span>
+          <h2 className="text-4xl md:text-5xl font-serif mt-4">
+            Chat with our <span className="text-cyan-400">Forensics AI</span>
+          </h2>
+          <p className="text-slate-400 mt-4 max-w-2xl mx-auto">
+            Ask questions about your analysis results and get instant insights powered by AI
+          </p>
+        </motion.div>
+
+        <motion.div
+          className="glass rounded-2xl border border-cyan-400/20 overflow-hidden max-w-3xl mx-auto"
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+        >
+          {/* Chat Header */}
+          <div className="bg-gradient-to-r from-cyan-400/10 to-blue-400/10 border-b border-cyan-400/20 px-6 py-4">
+            <h3 className="font-semibold flex items-center gap-2">
+              <div className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
+              Forensics AI Assistant
+            </h3>
+          </div>
+
+          {/* Chat Messages */}
+          <div className="h-96 overflow-y-auto bg-black/30 p-6 space-y-4">
+            {/* AI Message */}
+            <motion.div
+              className="flex gap-3"
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+            >
+              <div className="w-8 h-8 rounded-lg bg-cyan-400/20 flex items-center justify-center flex-shrink-0 border border-cyan-400/30">
+                <Code2 size={16} className="text-cyan-400" />
+              </div>
+              <div className="flex-1">
+                <div className="bg-cyan-400/5 border border-cyan-400/20 rounded-xl px-4 py-3 max-w-xs">
+                  <p className="text-sm text-slate-300">
+                    Hello! I&apos;m your Forensics AI. I can help analyze your documents, explain detection results, and answer security questions.
+                  </p>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* User Message */}
+            <motion.div
+              className="flex gap-3 justify-end"
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+            >
+              <div className="flex-1 max-w-xs">
+                <div className="bg-blue-400/10 border border-blue-400/30 rounded-xl px-4 py-3 ml-auto">
+                  <p className="text-sm text-slate-200">
+                    Can you explain the tamper detection results for my document?
+                  </p>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* AI Response */}
+            <motion.div
+              className="flex gap-3"
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.4 }}
+            >
+              <div className="w-8 h-8 rounded-lg bg-cyan-400/20 flex items-center justify-center flex-shrink-0 border border-cyan-400/30">
+                <Code2 size={16} className="text-cyan-400" />
+              </div>
+              <div className="flex-1">
+                <div className="bg-cyan-400/5 border border-cyan-400/20 rounded-xl px-4 py-3 max-w-xs">
+                  <p className="text-sm text-slate-300">
+                    Your document analysis shows no tampering detected. The integrity score is 99.2%, indicating the file is authentic with no signs of manipulation.
+                  </p>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+
+          {/* Chat Input */}
+          <div className="border-t border-cyan-400/20 p-4 flex gap-2">
+            <input
+              type="text"
+              placeholder="Ask me anything about your analysis..."
+              className="flex-1 bg-cyan-400/5 border border-cyan-400/20 rounded-lg px-4 py-2 text-sm outline-none focus:border-cyan-400/50 transition-colors"
+              disabled
+            />
+            <motion.button
+              className="bg-gradient-to-r from-cyan-400 to-blue-400 text-black px-4 py-2 rounded-lg font-semibold text-sm"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              disabled
+            >
+              <ArrowRight size={16} />
+            </motion.button>
+          </div>
+        </motion.div>
+
+        <div className="text-center mt-8 text-sm text-slate-500">
+          This is a demo chatbot interface. AI features will be available in the full release.
+        </div>
+      </motion.section>
+
       {/* Features Bento Grid */}
       <motion.section
         id="features"
@@ -559,9 +774,7 @@ export default function Home() {
             viewport={{ once: true }}
           >
             {[
-              { label: 'Uptime', value: '99.99%' },
               { label: 'Response Time', value: '<100ms' },
-              { label: 'Data Centers', value: '5+' },
               { label: 'Support Level', value: '24/7' },
             ].map((stat, i) => (
               <motion.div
@@ -761,6 +974,10 @@ export default function Home() {
             {
               q: 'What file types are supported?',
               a: 'Currently we support PDF, DOCX, and Excel files. Additional file formats will be added in future updates.',
+            },
+            {
+              q: 'How do I change the logo in VS Code?',
+              a: 'To customize the logo: 1) Open your project folder in VS Code, 2) Navigate to "public/logo.png", 3) Replace the file with your custom logo (PNG format recommended), 4) Save the file. The logo will update automatically. You can also edit the navbar styling in "app/page.tsx" (search for "navbar" section) to adjust logo size and styling.',
             },
           ].map((item, i) => (
             <motion.div
