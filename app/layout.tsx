@@ -10,8 +10,8 @@ const geistMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
-  title: 'v0 App',
-  description: 'Created with v0',
+  title: 'Decentralized Forensics | AI-Powered Digital Trust',
+  description: 'Enterprise-grade blockchain forensics and digital trust platform. Detect, prevent, and respond to threats with AI-powered analysis.',
   generator: 'v0.app',
   icons: {
     icon: [
@@ -38,8 +38,8 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
-      <body className="font-sans antialiased">
+    <html lang="en" className={`${geistSans.variable} ${geistMono.variable} bg-black scroll-smooth`}>
+      <body className="font-sans antialiased bg-black text-white">
         {children}
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
