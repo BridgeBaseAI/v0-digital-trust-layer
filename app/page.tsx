@@ -975,10 +975,7 @@ export default function Home() {
               q: 'What file types are supported?',
               a: 'Currently we support PDF, DOCX, and Excel files. Additional file formats will be added in future updates.',
             },
-            {
-              q: 'How do I change the logo in VS Code?',
-              a: 'To customize the logo: 1) Open your project folder in VS Code, 2) Navigate to "public/logo.png", 3) Replace the file with your custom logo (PNG format recommended), 4) Save the file. The logo will update automatically. You can also edit the navbar styling in "app/page.tsx" (search for "navbar" section) to adjust logo size and styling.',
-            },
+    
           ].map((item, i) => (
             <motion.div
               key={i}
