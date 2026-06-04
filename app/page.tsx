@@ -364,13 +364,8 @@ export default function Home() {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-px bg-cyan-400/10 border border-cyan-400/10 rounded-2xl overflow-hidden p-px">
+        <div className="grid md:grid-cols-2 gap-px bg-cyan-400/10 border border-cyan-400/10 rounded-2xl overflow-hidden p-px">
           {[
-            {
-              icon: AlertTriangle,
-              title: 'Deepfake Risk',
-              desc: 'Videos and images can be artificially generated',
-            },
             {
               icon: Lock,
               title: 'No Proof of Authenticity',
@@ -384,7 +379,7 @@ export default function Home() {
           ].map((item, i) => (
             <motion.div
               key={i}
-              className="bg-black/50 backdrop-blur p-8 border-r border-b border-cyan-400/10 last:border-r-0 last:border-b-0 hover:bg-cyan-400/5 transition-all"
+              className="bg-black/50 backdrop-blur p-8 border-r border-cyan-400/10 last:border-r-0 hover:bg-cyan-400/5 transition-all"
               variants={itemVariants}
             >
               <div className="w-10 h-10 rounded-lg bg-red-500/10 flex items-center justify-center mb-4">
