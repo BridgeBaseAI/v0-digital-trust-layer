@@ -975,7 +975,6 @@ export default function Home() {
               q: 'What file types are supported?',
               a: 'Currently we support PDF, DOCX, and Excel files. Additional file formats will be added in future updates.',
             },
-    
           ].map((item, i) => (
             <motion.div
               key={i}
